@@ -28,15 +28,3 @@ CREATE TABLE employee (
     REFERENCES employee_role(id)
     ON DELETE SET NULL
 );
-
--- SHOW TABLES;
-
--- SELECT "department" AS "Table";
--- DESCRIBE department;
-
--- SELECT "employee_role" AS "Table";
--- DESCRIBE employee_role;
-
--- SELECT "employee" AS "Table";
--- DESCRIBE employee;
-

@@ -1,5 +1,7 @@
 // dependencies:
+const { default: inquirer } = require('inquirer');
 const inquier = require('inquirer');
+const
 
 // user prompts to edit data in the db:
 const Uprompts = [
@@ -16,3 +18,11 @@ const Uprompts = [
         ]
     }
 ];
+
+function Operations() {
+    fillSelections();
+
+    inquirer.prompt(Uprompts).then(data => {
+
+    })
+}

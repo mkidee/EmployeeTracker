@@ -171,7 +171,7 @@ function updateEmployeeRole() {
                         questions();
                     });
                     break;
-                // if add department, call the add department method and prompt the user for the department name
+                // if add department, call the add department meothd and prompt the user for the department name
                 case 'addDepartment':
                     addDepartment();
                     break;

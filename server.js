@@ -112,4 +112,64 @@ function addDepartment() {
                 questions();
             });
         })
+
+// function to add role
+function addRole() {
+    prompt([
+        {
+            name: 'title',
+            type: 'input',
+            message: 'What is the title of the role you want to add?'
+        },
+        {
+            name: 'salary',
+            type: 'input',
+            message: 'Salary for this role'
+        },
+        {
+            name: 'DEPARTMENT_ID',
+            type: 'input',
+            message: 'What is the department ID for this role?'
+        },
+    ])
+        .then((res) => {
+            let role = res;
+            db.addRole(role).then(() => {
+                console.table(role);
+                questions();
+            });
+        })
 }
+
+function addEmployee() {
+    prompt([
+        {
+            name: 'FIRST_NAME',
+            type: 'input',
+            message: 'What is the first name of the employee?'
+        },
+        {
+            name: 'LAST_NAME',
+            type: 'input',
+            message: 'What is the last name of the employee?'
+        },
+        {
+            name: 'ROLE_ID',
+            type: 'input',
+            message: 'What is the role ID for this employee?'
+        },
+        {
+            name: 'MANAGER_ID',
+            type: 'input',
+            message: 'What is the manager ID for this employee?'
+        }
+    ])
+        .then((res) => {
+            let employee = res;
+            db.addEmployee(employee).then(() => {
+                console.table(employee);
+                questions();
+            });
+        })
+}
+

@@ -93,3 +93,23 @@ function questions() {
         }
     })
 };
+
+// Funct for adding employee, role, and department
+// function to add a department
+function addDepartment() {
+    prompt([
+        {
+            name: 'name',
+            type: 'input',
+            message: 'What department do you want to add?'
+        }
+    ])
+        .then((res) => {
+            let DEPARTMENT = res;
+            db.addDepartment(DEPARTMENT).then(() => {
+                console.log('Department added to database.');
+                console.table(DEPARTMENT);
+                questions();
+            });
+        })
+}

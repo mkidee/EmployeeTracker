@@ -3,28 +3,28 @@ CREATE DATABASE emp_db;
 
 USE emp_db;
 
-CREATE TABLE department (
+CREATE TABLE DEPARTMENT (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     depName VARCHAR(30) NOT NULL,
 );
 
-CREATE TABLE employee_role (
+CREATE TABLE ROLE (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(30) NOT NULL,
     salary DECIMAL NOT NULL,
-    department_id INT,
-    FOREIGN KEY (department_id)
-    REFERENCES department(id)
+    DEPARTMENT_id INT,
+    FOREIGN KEY (DEPARTMENT_id)
+    REFERENCES DEPARTMENT(id)
     ON DELETE SET NULL
 );
 
-CREATE TABLE employee (
+CREATE TABLE EMPLOYEE (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(30) NOT NULL,
     last_name VARCHAR(30) NOT NULL,
-    role_id INT,
+    ROLE_id INT,
     manager_id INT REFERENCES employee(id),
-    FOREIGN KEY (role_id)
+    FOREIGN KEY (ROLE_id)
     REFERENCES employee_role(id)
     ON DELETE SET NULL
 );

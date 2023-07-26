@@ -173,3 +173,24 @@ function addEmployee() {
         })
 }
 
+function updateEmployeeRole() {
+    prompt([
+        {
+            name: 'ID',
+            type: 'input',
+            message: 'What is the ID of the employee you want to update?'
+        },
+        {
+            name: 'ROLE_ID',
+            type: 'input',
+            message: 'What is the new role ID for this employee?'
+        }
+    ])
+        .then((res) => {
+            let employee = res;
+            db.updateEmployeeRole(employee.ID, employee.ROLE_ID).then(() => {
+                console.table(employee);
+                questions();
+            });
+        })
+} 

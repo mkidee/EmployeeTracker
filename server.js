@@ -1,4 +1,4 @@
-const connection = require('./connection.js');
+const connection = require('./connections.js');
 const { prompt } = require('inquirer');
 const db = require('./db/index.js');
 
@@ -192,5 +192,5 @@ function updateEmployeeRole() {
                 console.table(employee);
                 questions();
             });
-        })
-} 
+        })}
+}

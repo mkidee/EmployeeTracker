@@ -4,7 +4,7 @@ const MySqlconnection = mysql2.createConnection(
     {
         host: 'localhost',
         user: 'root',
-        password: '',
+        // password: '',
         database: 'emp_DB'
     },
 );

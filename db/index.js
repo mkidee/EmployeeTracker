@@ -1,4 +1,4 @@
-const MySqlconnection = require('../connection');
+const MySqlconnection = require('../connections');
 
 class DB {
     constructor() {
@@ -11,7 +11,7 @@ class DB {
     }
     viewAllRoles() {
         return this.connection.promise().query(
-            'SELECT * FROM ROLE'
+            'SELECT * FROM empRole'
         );
     }
     viewAllEmployees() {
@@ -24,9 +24,9 @@ class DB {
             'INSERT INTO DEPARTMENT SET ?', DEPARTMENT
         );
     }
-    addRole(ROLE) {
+    addRole(empRole) {
         return this.connection.promise().query(
-            'INSERT INTO ROLE SET ?', ROLE
+            'INSERT INTO empROLE SET ?', empRole
         );
     }
     addEmployee(EMPLOYEE) {
@@ -34,9 +34,9 @@ class DB {
             'INSERT INTO EMPLOYEE SET ?', EMPLOYEE
         );
     }
-    updateEmployeeRole(EMPLOYEEid, roleID) {
+    updateEmployeeRole(EMPLOYEEid, empRoleID) {
         return this.connection.promise().query(
-            'UPDATE EMPLOYEE SET ROLE_ID = ? WHERE ID = ?', [roleID, EMPLOYEEid]
+            'UPDATE EMPLOYEE SET ROLE_ID = ? WHERE ID = ?', [empRoleID, EMPLOYEEid]
         );
     }
     // ends the connection
